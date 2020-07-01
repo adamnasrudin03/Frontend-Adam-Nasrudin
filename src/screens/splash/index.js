@@ -13,7 +13,7 @@ class Splash extends Component {
   componentDidMount() {
     const {navigation} = this.props;
     setTimeout(() => {
-      navigation.navigate('Main');
+      navigation.replace('Main');
     }, 3000);
   }
   render() {

@@ -6,12 +6,10 @@ import {
   Left,
   ListItem,
   Icon,
-  Item,
   Fab,
   Right,
   Text,
   View,
-  Input,
   Thumbnail,
 } from 'native-base';
 
@@ -70,9 +68,7 @@ class ContactsScreen extends Component {
     const {data, saveData, error, deletedData, deletedError} = this.props;
 
     if (prevProps.data !== data) {
-      this.setState({
-        data: [...this.state.data, ...data],
-      });
+      this.setState({data: [...this.state.data, ...data]});
     } else if (
       prevProps.saveData !== saveData ||
       prevProps.deletedData !== deletedData
@@ -116,8 +112,6 @@ class ContactsScreen extends Component {
 
   render() {
     const {navigation, loading} = this.props;
-    const {data} = this.state;
-
     return (
       <Container>
         <CommonHeader navigation={navigation} title="Contacts" />
@@ -126,7 +120,7 @@ class ContactsScreen extends Component {
             refreshControl={
               <RefreshControl refreshing={loading} onRefresh={this.onRefresh} />
             }
-            data={data}
+            data={this.state.data}
             renderItem={({item: unit}) => (
               <RowUnit onPress={this.onShowForm} unit={unit} />
             )}

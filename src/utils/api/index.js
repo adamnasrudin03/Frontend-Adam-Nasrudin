@@ -15,11 +15,9 @@ commonAxios.interceptors.response.use(
       const error = new Error(data.message || 'Unknow error.');
       throw error;
     }
-    console.log('#ApiUtils data.data ', data.data);
     return sleep(1000, data.data);
   },
   function(error) {
-    console.log('#ApiUtils', error);
     return Promise.reject(error);
   },
 );

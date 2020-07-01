@@ -43,7 +43,7 @@ class ContactScreen extends Component {
     if (prevProps.data !== data) {
       this.setState({...data});
     } else if (saveData && prevProps.saveData !== saveData) {
-      navigation.goBack();
+      navigation.navigate('Contacts');
     } else if (error && prevProps.error !== error) {
       showError(error);
     } else if (saveError && prevProps.saveError !== saveError) {

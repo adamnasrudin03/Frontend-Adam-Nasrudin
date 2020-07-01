@@ -27,7 +27,6 @@ export function findById(id) {
 }
 
 export function findAllContacts(params) {
-  console.log('#Action findAll');
   return {
     type: FIND_CONTACTS_REQUEST,
     params: params,
